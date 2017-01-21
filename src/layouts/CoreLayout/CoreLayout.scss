@@ -1,0 +1,11 @@
+@import '../../styles/vars';
+
+.appContainer {
+  width: $break-big;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media screen and (max-width: $break-big) {
+    width: 100%;
+  }
+}

@@ -1,10 +1,10 @@
 import React from 'react'
 import SearchBar from '../../containers/SearchBar'
-import Navbar from '../Navbar/Navbar'
-import './Header.scss'
+import Navbar from '../Navbar'
+import styles from './Header.scss'
 
 export const Header = () => (
-  <div>
+  <div className={styles.header}>
     <Navbar />
     <SearchBar />
   </div>

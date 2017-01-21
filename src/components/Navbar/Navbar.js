@@ -1,24 +1,20 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import Tab from '../Tab'
 import styles from './Navbar.scss'
 
 const Navbar = () => (
   <div className={styles.navbar}>
-    <div>
-      <div>Questions</div>
-      <div>Plus</div>
+    <div className={styles.navbarLeft}>
+      <div className={styles.title}>Questions</div>
+      <div className={styles.plus} />
     </div>
     <div className={styles.navbarRight}>
-      <div>
-        <IndexLink to='/' activeClassName='route--active'>
-          My Shelf
-        </IndexLink>
-        <Link to='/all' activeClassName='route--active'>
-          All questions
-        </Link>
+      <div className={styles.tabs}>
+        <Tab name='My shelf' route='/myshelf' />
+        <Tab name='All' route='/' />
       </div>
-      <div>
-      Sort by: <a href='#'>recent</a> or <a href='#'>hot</a>
+      <div className={styles.sorts}>
+        <span>Sort by: </span><a href='#'>recent</a><span> or </span><a href='#'>hot</a>
       </div>
     </div>
   </div>
