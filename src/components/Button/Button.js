@@ -2,7 +2,9 @@ import React from 'react'
 import styles from './Button.scss'
 
 const Button = ({ text }) => (
-  <div className={styles.button}>{text}</div>
+  <div className={styles.button}>
+    <span>{text}</span>
+  </div>
 )
 
 Button.propTypes = {

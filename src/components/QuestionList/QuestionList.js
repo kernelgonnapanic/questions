@@ -1,11 +1,9 @@
 import React from 'react'
 import Question from '../Question'
 
-const QuestionList = () => (
+const QuestionList = ({ questions }) => (
   <div>
-    <Question />
-    <Question />
-    <Question />
+    {questions.map(item => (<Question data={item} key={item.id} />))}
   </div>
 )
 

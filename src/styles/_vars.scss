@@ -1,2 +1,12 @@
 $break-big: 900px;
 $break-small: 320px;
+
+//Colors:
+
+$lighter-gray: #fafafa;
+$light-gray: #e1e1e1;
+$medium-gray: #aaa;
+$dark-gray: darken($medium-gray, 30%);
+
+$light-blue: #BBE3FC;
+$dark-blue: darken($light-blue, 50%);

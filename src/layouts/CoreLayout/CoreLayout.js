@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../../components/Header'
 import '../../styles/core.scss'
 import styles from './CoreLayout.scss'
+import Modal from '../../components/Modal'
+import UserModal from '../../containers/UserModal'
 
 export const CoreLayout = ({ children }) => (
   <div className={styles.appContainer}>
@@ -9,6 +11,9 @@ export const CoreLayout = ({ children }) => (
     <div>
       {children}
     </div>
+    <Modal>
+      <UserModal />
+    </Modal>
   </div>
 )
 

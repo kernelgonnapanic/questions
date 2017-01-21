@@ -1,11 +1,15 @@
+@import '../../styles/vars';
+
 .button {
-  height: 40px;
+  height: 30px;
   min-width: 80px;
-  width: 100px;
-  border: 1px solid black;
+  width: 200px;
+  border: 1px solid $medium-gray;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-weight: bold;
+  color: $medium-gray;
 }

@@ -1,5 +1,80 @@
+@import '../../styles/vars';
+
 .question {
   width: 100%;
   height: 300px;
-  border: 1px solid black;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.questionSidebar {
+  flex: 1;
+  background-color: $light-blue;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 5px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .questionAdditionalInfo {
+    text-transform: uppercase;
+    border-top: 2px solid $medium-gray;
+    color: $dark-gray;
+    padding: 5px 15px 0;
+  }
+}
+
+.questionContent {
+  flex: 5;
+
+  .questionHeader {
+    padding: 0 10px;
+    height: 80px;
+    background-color: $light-blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .questionName {
+    color: $dark-blue;
+    span {
+      color: $dark-gray;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+
+  .questionText {
+    color: $dark-blue;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .questionActivities {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
+.questionSummary {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  div {
+    padding-bottom: 30px;
+  }
 }
