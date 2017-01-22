@@ -1,11 +1,12 @@
 @import '../../styles/vars';
+@import '../../styles/mixins';
+
+.appWrapper {
+  margin: 0 40px 60px;
+  background-color: white;
+  box-shadow: $lighter-gray 1px 1px 10px;
+}
 
 .appContainer {
-  width: $break-big;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media screen and (max-width: $break-big) {
-    width: 100%;
-  }
+  @include container();
 }

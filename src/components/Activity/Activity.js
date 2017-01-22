@@ -1,10 +1,11 @@
 import React from 'react'
+import Avatar from '../Avatar'
 import styles from './Activity.scss'
 
-const Activity = ({ activity }) => (
+const Activity = ({ activity, onAvatarClick }) => (
   <div>
     <div className={styles.activity}>
-      <img src={activity.user.avatar} />
+      <Avatar src={activity.user.avatar} onClick={onAvatarClick} />
       <div
         className={styles.additionalInfo + (activity.type === 'answer' ? ` ${styles.answered}` : '')}>
         {activity.type + 'ed'}
@@ -15,7 +16,8 @@ const Activity = ({ activity }) => (
 )
 
 Activity.propTypes = {
-  activity: React.PropTypes.object
+  activity: React.PropTypes.object,
+  onAvatarClick: React.PropTypes.func
 }
 
 export default Activity

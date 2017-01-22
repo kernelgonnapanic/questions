@@ -1,4 +1,4 @@
-@import 'base';
+@import 'vars';
 @import '~normalize.css/normalize';
 
 // Some best-practice CSS that's useful for most apps
@@ -13,7 +13,7 @@ body {
   padding: 0;
   height: 100%;
   font-family: 'Overpass', sans-serif;
-
+  background-color: $yellowish;
 }
 
 *,

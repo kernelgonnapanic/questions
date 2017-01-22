@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -19,7 +21,7 @@
 .plus {
   height: 25px;
   width: 25px;
-  background-color: blue;
+  background-color: $dark-blue;
   border-radius: 50%;
 }
 

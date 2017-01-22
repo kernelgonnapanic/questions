@@ -1,24 +1,26 @@
 import React from 'react'
 import styles from './Question.scss'
 import Activity from '../Activity'
+import Avatar from '../Avatar'
 
-const QuestionSidebar = ({ user }) => (
+const QuestionSidebar = ({ user, onAvatarClick }) => (
   <div className={styles.questionSidebar}>
-    <img src={user.avatar} />
+    <Avatar src={user.avatar} onClick={() => onAvatarClick(user.userId)} />
     <div className={styles.questionAdditionalInfo}>asked</div>
   </div>
 )
 
-const QuestionContent = ({ name, text, activities }) => (
+const QuestionContent = ({ user, text, activities, onAvatarClick }) => (
   <div className={styles.questionContent}>
     <div className={styles.questionHeader}>
       <div className={styles.questionName}>
-        {name}<span> is asking:</span>
+        {user.name}<span> is asking:</span>
       </div>
       <div className={styles.questionText}>{text}</div>
     </div>
     <div className={styles.questionActivities}>
-      {activities.map(item => (<Activity key={item.id} activity={item} />))}
+      {activities.map(item =>
+        (<Activity key={item.id} activity={item} onAvatarClick={() => onAvatarClick(user.userId)} />))}
     </div>
   </div>
 )
@@ -31,11 +33,13 @@ const QuestionSummary = ({ summary }) => (
   </div>
 )
 
-const Question = ({ data }) => (
-  <div className={styles.question}>
-    <QuestionSidebar user={data.user} />
-    <QuestionContent name={data.user.name} text={data.text} activities={data.activities} />
-    <QuestionSummary summary={data.summary} />
+const Question = ({ data, onAvatarClick }) => (
+  <div className={styles.questionWrapper}>
+    <div className={styles.question}>
+      <QuestionSidebar user={data.user} onAvatarClick={onAvatarClick} />
+      <QuestionContent user={data.user} text={data.text} onAvatarClick={onAvatarClick} activities={data.activities} />
+      <QuestionSummary summary={data.summary} />
+    </div>
   </div>
 )
 

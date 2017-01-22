@@ -2,18 +2,20 @@ import React from 'react'
 import Header from '../../components/Header'
 import '../../styles/core.scss'
 import styles from './CoreLayout.scss'
-import Modal from '../../components/Modal'
-import UserModal from '../../containers/UserModal'
+import ModalContainer from '../../containers/ModalContainer'
+import UserContainer from '../../containers/UserContainer'
 
 export const CoreLayout = ({ children }) => (
-  <div className={styles.appContainer}>
+  <div>
     <Header />
-    <div>
-      {children}
+    <div className={styles.appWrapper}>
+      <div className={styles.appContainer}>
+        {children}
+      </div>
     </div>
-    <Modal>
-      <UserModal />
-    </Modal>
+    <ModalContainer>
+      <UserContainer />
+    </ModalContainer>
   </div>
 )
 

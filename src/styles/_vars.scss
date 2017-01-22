@@ -3,10 +3,14 @@ $break-small: 320px;
 
 //Colors:
 
-$lighter-gray: #fafafa;
 $light-gray: #e1e1e1;
+$lighter-gray: lighten($light-gray, 5%);
+$faint-gray: #fafafa;
+
 $medium-gray: #aaa;
 $dark-gray: darken($medium-gray, 30%);
 
-$light-blue: #BBE3FC;
+$light-blue: #d3edfd;
 $dark-blue: darken($light-blue, 50%);
+
+$yellowish: #FCD399;

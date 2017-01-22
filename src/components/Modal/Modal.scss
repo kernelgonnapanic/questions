@@ -1,18 +1,39 @@
 @import '../../styles/vars';
 
 .modal {
-  width: $break-big;
-  height: 500px;
+  height: 800px;
   margin: 0 auto;
-  padding: 30px;
-  position: fixed;
+  padding: 30px 100px;
+  position: absolute;
   top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   background: white;
   border: 1px solid black;
-  display: none;
+  z-index: 100;
 
   @media screen and (max-width: $break-big) {
-    width: 100%;
+    right: 0;
+    left: 0;
+    transform: none;
     margin: 0 30px;
   }
+
+  @media screen and (min-width: $break-big + 1) {
+    width: 900px;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.overlay {
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 3;
+  position: fixed;
+  height: 100%;
+  top:0;
 }

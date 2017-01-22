@@ -1,0 +1,36 @@
+@import '../../styles/vars';
+
+.userHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $medium-gray;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  div {
+    padding-bottom: 10px;
+  }
+
+  .userName {
+    color: $dark-blue;
+    font-size: 18px;
+  }
+}
+
+.userShortSummary {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+
+  div {
+    padding: 0 10px;
+  }
+
+  span {
+    text-transform: uppercase;
+    color: $medium-gray;
+  }
+}

@@ -4,9 +4,11 @@ import Navbar from '../Navbar'
 import styles from './Header.scss'
 
 export const Header = () => (
-  <div className={styles.header}>
-    <Navbar />
-    <SearchBar />
+  <div className={styles.headerContainer}>
+    <div className={styles.header}>
+      <Navbar />
+      <SearchBar />
+    </div>
   </div>
 )
 
