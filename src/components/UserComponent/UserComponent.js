@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './UserComponent.scss'
 
 import Avatar from '../../components/Avatar'
+import Card from '../../components/Card'
+import Gradient from '../../assets/icons/gradient.svg'
 
 const UserHeader = ({ user }) => user
 ? (
@@ -17,11 +19,67 @@ const UserHeader = ({ user }) => user
 )
 : (<h1> User not found </h1>)
 
+const CardsList = ({ summary }) => {
+  const angles = [40, -20, 40, 20]
+  return (
+    <div className={styles.list}>
+      {summary.map((item, idx) => (<Card card={item} key={idx} angle={angles[idx % angles.length]} />))}
+    </div>
+  )
+}
+
+const UserTile = ({ user }) => (
+  <div className={styles.userTile}>
+    <Gradient />
+    <div className={styles.userTilePhoto}>
+      <Avatar src={user.avatar} />
+    </div>
+    <div className={styles.userName}>
+      {user.name}
+    </div>
+  </div>
+)
+
+const UserTilesList = ({ similarUsers }) => (
+  <div className={styles.list}>
+    { similarUsers.map((item, idx) => (<UserTile user={item} key={idx} />))}
+  </div>
+)
+
+const UserDiscussion = ({ discussion }) => (
+  <div className={styles.userDiscussion}>
+    <Gradient />
+    <div className={styles.userDiscussionContent} >
+      <Avatar src={discussion.user.avatar} />
+      <div>
+        <span className={styles.userName}>{discussion.user.name} </span>
+        <span className={styles.userDiscussionHeader}>found the {discussion.type}</span>
+      </div>
+      <div className={styles.userDiscussionText}>
+        {discussion.text}
+      </div>
+      <div className={styles.userDiscussionSummary}>
+        <span>{discussion.summary.peersInvolved} peers involved</span>
+        <span>{discussion.summary.relatedDiscussions} related discussions</span>
+        <span>{discussion.summary.conversations} conversations</span>
+        <span>{discussion.summary.upvotes} upvotes</span>
+      </div>
+    </div>
+  </div>
+)
+
 const UserSummary = ({ user }) => user
 ? (
   <div className={styles.userSummary}>
-    <div>How it all started? </div>
-    <div>{"That's where we have been those "}{user.membershipLength} ago </div>
+    <div className={styles.summaryHeader}>How it all started? </div>
+    <div className={styles.summarySubHeader}>
+      {"That's where we have been these "}{user.membershipLength} ago
+    </div>
+    <CardsList summary={user.summary} />
+    <div className={styles.summarySubHeader}>Who joined the platform that same period </div>
+    <UserTilesList similarUsers={user.similarFriends} />
+    <div className={styles.summarySubHeader}>The hottest discussion these days </div>
+    <UserDiscussion discussion={user.discussion} />
   </div>
 )
 : (<h1> User not found </h1>)

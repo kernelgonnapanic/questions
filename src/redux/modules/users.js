@@ -26,7 +26,21 @@ const INITIAL_STATE = {
       userId: 1,
       name: 'Patricia',
       avatar: 'http://lorempixel.com/100/100/people?id=1'
-    }]
+    }],
+    discussion: {
+      user: {
+        name: 'Andrew',
+        avatar: 'http://lorempixel.com/100/100/people?id=1'
+      },
+      type: 'article',
+      text: 'Vegan diet to stop bla bla',
+      summary: {
+        peersInvolved: 6,
+        relatedDiscussions: 3,
+        conversations: 3,
+        upvotes: 19
+      }
+    }
   }, {
     userId: 1,
     name: 'Ewa',
@@ -51,7 +65,29 @@ const INITIAL_STATE = {
       userId: 1,
       name: 'Patricia',
       avatar: 'http://lorempixel.com/100/100/people?id=1'
-    }]
+    }, {
+      userId: 0,
+      name: 'Patricia',
+      avatar: 'http://lorempixel.com/100/100/people?id=1'
+    }, {
+      userId: 2,
+      name: 'Patricia',
+      avatar: 'http://lorempixel.com/100/100/people?id=1'
+    }],
+    discussion: {
+      user: {
+        name: 'Andrew',
+        avatar: 'http://lorempixel.com/100/100/people?id=1'
+      },
+      type: 'article',
+      text: 'Vegan diet to stop bla bla',
+      summary: {
+        peersInvolved: 6,
+        relatedDiscussions: 3,
+        conversations: 3,
+        upvotes: 19
+      }
+    }
   }, {
     userId: 2,
     name: 'Marek',
@@ -76,10 +112,23 @@ const INITIAL_STATE = {
       userId: 1,
       name: 'Patricia',
       avatar: 'http://lorempixel.com/100/100/people?id=1'
-    }]
+    }],
+    discussion: {
+      user: {
+        name: 'Andrew',
+        avatar: 'http://lorempixel.com/100/100/people?id=1'
+      },
+      type: 'article',
+      text: 'Vegan diet to stop bla bla',
+      summary: {
+        peersInvolved: 6,
+        relatedDiscussions: 3,
+        conversations: 3,
+        upvotes: 19
+      }
+    }
   }
-  ]
-}
+  ] }
 
 export const usersReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

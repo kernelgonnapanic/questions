@@ -1,3 +1,3 @@
-import UserComponent from './UserComponent'
+import UserComponent from './UserComponent.js'
 
 export default UserComponent
