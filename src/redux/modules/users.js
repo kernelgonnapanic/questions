@@ -1,4 +1,4 @@
-import { OPEN_MODAL } from './ui'
+import { OPEN_MODAL, CLOSE_MODAL } from './ui'
 
 const INITIAL_STATE = {
   userSelected: null,
@@ -134,6 +134,8 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case OPEN_MODAL:
       return { ...state, userSelected: action.userId }
+    case CLOSE_MODAL:
+      return { ...state, userSelected: null }
     default:
       return state
   }
