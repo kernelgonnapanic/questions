@@ -15,4 +15,9 @@ const QuestionList = ({ questions, onAvatarClick }) => (
   </div>
 )
 
+QuestionList.propTypes = {
+  questions: React.PropTypes.array,
+  onAvatarClick: React.PropTypes.func
+}
+
 export default QuestionList

@@ -6,7 +6,6 @@ const rotate = (angle) => ({
 })
 
 const Card = ({ card, angle }) => {
-  console.log(angle)
   return (
     <div className={styles.card}>
       <div className={styles.cardBackground} style={rotate(angle)} />
@@ -14,6 +13,11 @@ const Card = ({ card, angle }) => {
       <div className={styles.cardTitle}>{card.title}</div>
     </div>
   )
+}
+
+Card.propTypes = {
+  card: React.PropTypes.object.isRequired,
+  angle: React.PropTypes.number
 }
 
 export default Card

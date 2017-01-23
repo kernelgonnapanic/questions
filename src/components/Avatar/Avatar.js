@@ -5,4 +5,9 @@ const Avatar = ({ src, onClick }) => (
   <img className={styles.avatar} src={src} onClick={onClick} />
 )
 
+Avatar.propTypes = {
+  src: React.PropTypes.string,
+  onClick: React.PropTypes.func
+}
+
 export default Avatar

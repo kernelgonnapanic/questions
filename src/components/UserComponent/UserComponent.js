@@ -19,6 +19,10 @@ const UserHeader = ({ user }) => user
 )
 : (<h1> User not found </h1>)
 
+UserHeader.propTypes = {
+  user: React.PropTypes.object.isRequired
+}
+
 const CardsList = ({ summary }) => {
   const angles = [40, -20, 40, 20]
   return (
@@ -26,6 +30,10 @@ const CardsList = ({ summary }) => {
       {summary.map((item, idx) => (<Card card={item} key={idx} angle={angles[idx % angles.length]} />))}
     </div>
   )
+}
+
+CardsList.propTypes = {
+  summary: React.PropTypes.array
 }
 
 const UserTile = ({ user }) => (
@@ -40,11 +48,19 @@ const UserTile = ({ user }) => (
   </div>
 )
 
+UserTile.propTypes = {
+  user: React.PropTypes.object
+}
+
 const UserTilesList = ({ similarUsers }) => (
   <div className={styles.list}>
     { similarUsers.map((item, idx) => (<UserTile user={item} key={idx} />))}
   </div>
 )
+
+UserTilesList.propTypes = {
+  similarUsers: React.PropTypes.array
+}
 
 const UserDiscussion = ({ discussion }) => (
   <div className={styles.userDiscussion}>
@@ -68,6 +84,10 @@ const UserDiscussion = ({ discussion }) => (
   </div>
 )
 
+UserDiscussion.propTypes = {
+  discussion: React.PropTypes.object
+}
+
 const UserSummary = ({ user }) => user
 ? (
   <div className={styles.userSummary}>
@@ -84,6 +104,10 @@ const UserSummary = ({ user }) => user
 )
 : (<h1> User not found </h1>)
 
+UserSummary.propTypes = {
+  user: React.PropTypes.object.isRequired
+}
+
 const UserComponent = ({ user }) => {
   return (
     <div>
@@ -91,6 +115,10 @@ const UserComponent = ({ user }) => {
       <UserSummary user={user} />
     </div>
   )
+}
+
+UserComponent.propTypes = {
+  user: React.PropTypes.object.isRequired
 }
 
 export default UserComponent

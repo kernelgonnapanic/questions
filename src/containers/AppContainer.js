@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
+import { Router } from 'react-router'
+import { createHistory, useBasename } from 'history'
+
+const browserHistory = useBasename(createHistory)({
+  basename: '/questions'
+})
 
 class AppContainer extends Component {
   static propTypes = {

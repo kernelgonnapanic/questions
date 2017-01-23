@@ -10,6 +10,11 @@ const QuestionSidebar = ({ user, onAvatarClick }) => (
   </div>
 )
 
+QuestionSidebar.propTypes = {
+  user: React.PropTypes.object,
+  onAvatarClick: React.PropTypes.func
+}
+
 const QuestionContent = ({ user, text, activities, onAvatarClick }) => (
   <div className={styles.questionContent}>
     <div className={styles.questionHeader}>
@@ -25,6 +30,13 @@ const QuestionContent = ({ user, text, activities, onAvatarClick }) => (
   </div>
 )
 
+QuestionContent.propTypes = {
+  user: React.PropTypes.object,
+  text: React.PropTypes.string,
+  activities: React.PropTypes.array,
+  onAvatarClick: React.PropTypes.func
+}
+
 const QuestionSummary = ({ summary }) => (
   <div className={styles.questionSummary}>
     <div>{summary.numberOfRelatedDiscussions} related discussion </div>
@@ -32,6 +44,10 @@ const QuestionSummary = ({ summary }) => (
     <div>{summary.numberOfConversations} conversations</div>
   </div>
 )
+
+QuestionSummary.propTypes = {
+  summary: React.PropTypes.object
+}
 
 const Question = ({ data, onAvatarClick }) => (
   <div className={styles.questionWrapper}>
@@ -44,21 +60,8 @@ const Question = ({ data, onAvatarClick }) => (
 )
 
 Question.propTypes = {
-  data: React.PropTypes.object
-}
-
-QuestionSummary.propTypes = {
-  summary: React.PropTypes.object
-}
-
-QuestionSidebar.propTypes = {
-  user: React.PropTypes.object
-}
-
-QuestionContent.propTypes = {
-  name: React.PropTypes.string,
-  text: React.PropTypes.string,
-  activities: React.PropTypes.array
+  data: React.PropTypes.object.isRequired,
+  onAvatarClick: React.PropTypes.func
 }
 
 export default Question

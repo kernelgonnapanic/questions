@@ -12,7 +12,9 @@ const Modal = ({ modalOpened, closeModal, children }) => modalOpened
 ) : null
 
 Modal.propTypes = {
-  modalOpened: React.PropTypes.bool
+  modalOpened: React.PropTypes.bool,
+  closeModal: React.PropTypes.func,
+  children: React.PropTypes.object
 }
 
 export default Modal
