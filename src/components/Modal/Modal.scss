@@ -11,6 +11,7 @@
   background: white;
   border: 1px solid black;
   z-index: 100;
+  overflow: scroll;
 
   @media screen and (max-width: $break-big) {
     right: 0;
@@ -20,7 +21,7 @@
   }
 
   @media screen and (min-width: $break-big + 1) {
-    width: 900px;
+    width: 750px;
   }
 
   &.hidden {

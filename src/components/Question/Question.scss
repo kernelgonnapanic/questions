@@ -8,12 +8,13 @@
 .question {
   width: 100%;
   height: 300px;
-  // margin-bottom: 30px;
+  position: relative;
   display: flex;
 }
 
 .questionSidebar {
   flex: 1;
+  z-index: 1;
   background-color: $light-blue;
   height: 300px;
   display: flex;
@@ -32,6 +33,7 @@
 
 .questionContent {
   flex: 5;
+  z-index: 1;
 
   .questionHeader {
     padding: 0 10px;
@@ -56,6 +58,10 @@
     color: $dark-blue;
     font-size: 18px;
     font-style: italic;
+
+    @media screen and (max-width: 550px) {
+      font-size: 12px;
+    }
   }
 
   .questionActivities {
@@ -63,15 +69,18 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 }
 
 .questionSummary {
+  z-index: 1;
   flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  font-size: 12px;
 
   div {
     padding-bottom: 30px;

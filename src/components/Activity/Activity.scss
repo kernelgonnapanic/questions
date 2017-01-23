@@ -1,7 +1,7 @@
 @import '../../styles/vars';
 
 .activity {
-  width: 100px;
+  width: 95px;
   margin: 30px 5px 0;
   padding: 5px 10px;
   height: 190px;
@@ -42,5 +42,30 @@
 
   &.answered {
     background-color: $dark-gray;
+  }
+}
+
+//responsive
+
+.activityWrapper {
+  @media screen and (max-width: 990px) {
+    &:nth-child(n+5) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 890px) {
+    &:nth-child(n+4) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    &:nth-child(n+3) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    &:nth-child(n+2) {
+      display: none;
+    }
   }
 }

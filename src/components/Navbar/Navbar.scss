@@ -33,6 +33,12 @@
   margin-right: 20px;
 }
 
+.navbarRight {
+  @media screen and (max-width: 620px) {
+    display: none;
+  }
+}
+
 .sorts {
   width: 150px;
 }

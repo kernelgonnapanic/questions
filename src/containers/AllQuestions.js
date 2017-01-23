@@ -68,6 +68,30 @@ const questions = [
           name: 'Anna',
           avatar: 'http://lorempixel.com/100/100/people?id=3'
         }
+      }, {
+        type: 'comment',
+        id: 40,
+        user: {
+          userId: 2,
+          name: 'Abdul',
+          avatar: 'http://lorempixel.com/100/100/people?id=1'
+        }
+      }, {
+        type: 'comment',
+        id: 44,
+        user: {
+          userId: 2,
+          name: 'Abdul',
+          avatar: 'http://lorempixel.com/100/100/people?id=1'
+        }
+      }, {
+        type: 'comment',
+        id: 54,
+        user: {
+          userId: 2,
+          name: 'Abdul',
+          avatar: 'http://lorempixel.com/100/100/people?id=1'
+        }
       }
     ],
     summary: {

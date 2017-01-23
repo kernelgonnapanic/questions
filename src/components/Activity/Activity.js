@@ -3,7 +3,7 @@ import Avatar from '../Avatar'
 import styles from './Activity.scss'
 
 const Activity = ({ activity, onAvatarClick }) => (
-  <div>
+  <div className={styles.activityWrapper}>
     <div className={styles.activity}>
       <Avatar src={activity.user.avatar} onClick={onAvatarClick} />
       <div
